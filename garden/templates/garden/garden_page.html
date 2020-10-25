@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+ 
+ 
+{% if user.is_authenticated  %}
+
+	<button onclick="location.href = '/garden/update?fertilizer=1';" value="fertilizer">I fert</button> 
+	<button onclick="location.href = '/garden/update?weed=1';" value="weed">I weed</button> 
+	<button onclick="location.href = '/garden/update?water=1';" value="water">I make rain</button> 
+	<button onclick="location.href = '/garden/update?rain=1;" value="rain">I didnt make it rain</button> 
+{% endif %} 
+  
+<br>
+Plants last watered on: {{water_start_time}} by {{water_user}}. Water again by {{water_end_time}}
+<br>
+Plants last fertilizer on: {{fertilizer_start_time}} by {{fertilizer_user}}. fertilizer again by {{fertilizer_end_time}}
+<br>
+Plants last weeded on: {{weed_start_time}} by {{weed_user}}. weed again by {{weed_end_time}}
+<br>
+{% endblock %}

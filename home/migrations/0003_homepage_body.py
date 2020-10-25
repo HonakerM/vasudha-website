@@ -5,11 +5,10 @@ import wagtail.core.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('home', '0002_create_homepage'),
     ]
-
+    
     operations = [
         migrations.AddField(
             model_name='homepage',
